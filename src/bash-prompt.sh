@@ -42,11 +42,20 @@ case "${curdir}" in
         ;;
 esac
 
-if [ "$color_prompt" = yes ]; then
-    color_one="\[\e[01;32m\]"
-    color_two="\[\e[01;36m\]"
-    color_reset="\[\e[00m\]"
+function build_prompt() {
+    if [ "$1" = "yes" ]; then
+        es="\["
+        ee="\]"
+        c1="\e[01;32m"
+        c2="\e[01;36m"
+        cr="\e[00m"
+    fi
+    echo "${debian_chroot:+($debian_chroot)}${es}${c1}${ee}\u@\h${es}${cr}${ee}:${es}${c2}${ee}${curdir}${es}${cr}${ee}${gitprompt}"
+}
+
+if [ -t 0 -a ! -z "$color_prompt" ]; then
+    echo -n "\033]2;$(build_prompt)"
 fi
 
-echo -n "${debian_chroot:+($debian_chroot)}${color_one}\u@\h${color_reset}:${color_two}${curdir}${color_reset}${gitprompt}\$ "
+echo -n "$(build_prompt $color_prompt)\$ "
 
