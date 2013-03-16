@@ -52,7 +52,7 @@ function build_prompt() {
 }
 
 if [ -t 0 -a ! -z "$color_prompt" ]; then
-    echo -n "\033]2;$(build_prompt)"
+    echo -n "\[\033]2;$(build_prompt)\]"
 fi
 
 echo -n "$(build_prompt $color_prompt)\$ "
