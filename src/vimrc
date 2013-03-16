@@ -26,3 +26,6 @@ augroup C
     au FileType c syn region Block start="{" end="}" transparent fold
     au FileType c syn region Comment start="/\*" end="\*/" fold
 augroup END
+
+au BufRead *.ghtml set ft=html
+
