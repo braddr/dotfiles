@@ -44,13 +44,11 @@ esac
 
 function build_prompt() {
     if [ "$1" = "yes" ]; then
-        es="\["
-        ee="\]"
-        c1="\e[01;32m"
-        c2="\e[01;36m"
-        cr="\e[00m"
+        c1="\[\e[01;32m\]"
+        c2="\[\e[01;36m\]"
+        cr="\[\e[00m\]"
     fi
-    echo "${debian_chroot:+($debian_chroot)}${es}${c1}${ee}\u@\h${es}${cr}${ee}:${es}${c2}${ee}${curdir}${es}${cr}${ee}${gitprompt}"
+    echo "${debian_chroot:+($debian_chroot)}${c1}\u@\h${cr}:${c2}${curdir}${cr}${gitprompt}"
 }
 
 if [ -t 0 -a ! -z "$color_prompt" ]; then
