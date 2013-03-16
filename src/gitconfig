@@ -1,0 +1,7 @@
+[user]
+	name = Brad Roberts
+	email = braddr@puremagic.com
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore
