@@ -19,6 +19,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# Prompt definition
 if [ -x ~/.bash-prompt.sh ]; then
     function prompt_command() {
         export PS1=$(~/.bash-prompt.sh)
@@ -26,18 +27,10 @@ if [ -x ~/.bash-prompt.sh ]; then
     export PROMPT_COMMAND=prompt_command
 fi
 
-export CLICOLOR=1
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
