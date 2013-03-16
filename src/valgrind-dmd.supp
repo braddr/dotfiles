@@ -1,0 +1,51 @@
+{
+   d_gc_cond_1
+   Memcheck:Cond
+   fun:_D2gc3gcx3Gcx4markMFPvPvZv
+   fun:thread_scanAll
+   fun:_D2gc3gcx3Gcx11fullcollectMFPvZm
+   fun:_D2gc3gcx3Gcx16fullcollectshellMFZm
+}
+{
+   d_gc_cond_2
+   Memcheck:Cond
+   fun:_D2gc3gcx3Gcx8findPoolMFPvZPS2gc3gcx4Pool
+   fun:_D2gc3gcx3Gcx4markMFPvPvZv
+   fun:thread_scanAll
+   fun:_D2gc3gcx3Gcx11fullcollectMFPvZm
+   fun:_D2gc3gcx3Gcx16fullcollectshellMFZm
+}
+{
+   d_gc_cond_3
+   Memcheck:Cond
+   fun:_D2gc3gcx3Gcx11fullcollectMFPvZm
+   fun:_D2gc3gcx3Gcx16fullcollectshellMFZm
+}
+{
+   d_gc_cond_4
+   Memcheck:Cond
+   fun:_D2gc3gcx3Gcx4markMFPvPvZv
+   fun:_D2gc3gcx3Gcx11fullcollectMFPvZm
+   fun:_D2gc3gcx3Gcx16fullcollectshellMFZm
+}
+{
+   d_gc_value_1
+   Memcheck:Value8
+   fun:_D2gc3gcx3Gcx4markMFPvPvZv
+   fun:thread_scanAll
+   fun:_D2gc3gcx3Gcx11fullcollectMFPvZm
+   fun:_D2gc3gcx3Gcx16fullcollectshellMFZm
+}
+{
+   d_gc_value_2
+   Memcheck:Value8
+   fun:_D2gc3gcx3Gcx11fullcollectMFPvZm
+   fun:_D2gc3gcx3Gcx16fullcollectshellMFZm
+}
+{
+   d_gc_value_3
+   Memcheck:Value8
+   fun:_D2gc3gcx3Gcx4markMFPvPvZv
+   fun:_D2gc3gcx3Gcx11fullcollectMFPvZm
+   fun:_D2gc3gcx3Gcx16fullcollectshellMFZm
+}
