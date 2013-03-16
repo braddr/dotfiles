@@ -2,7 +2,7 @@ all: copy-files
 
 QUIET=@
 OUTPUTDIR=~
-INFILES=$(shell find src -type f)
+INFILES=$(shell find src -type f -and ! -name \*.sw[a-z])
 OUTFILES=$(patsubst src/%,$(OUTPUTDIR)/.%,$(INFILES))
 SSHKEYS=$(addprefix .ssh/,id_rsa github.rsa cygwin-keypair-one.pem)
 
