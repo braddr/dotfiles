@@ -6,8 +6,8 @@ INFILES=$(wildcard src/*)
 OUTFILES=$(patsubst src/%,$(OUTPUTDIR)/.%,$(INFILES))
 
 $(OUTPUTDIR)/.% : src/%
-	$(QUIET)echo Copying $< -> $@
-	$(QUIET)cp $< $@
+	$(QUIET)echo "Copying $< -> $@"
+	$(QUIET)cp -a $< $@
 
 copy-files: $(OUTFILES)
 
