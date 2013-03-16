@@ -1,0 +1,13 @@
+Host github.com
+        User git
+        Hostname github.com
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/github.rsa
+
+Host *.puremagic.com
+        IdentityFile ~/.ssh/id_rsa
+
+Host *.compute-1.amazonaws.com
+        User ec2-user
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/cygwin-keypair-one.pem
