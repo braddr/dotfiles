@@ -1,0 +1,28 @@
+set nobackup
+set softtabstop=4
+set shiftwidth=4
+set tabstop=8
+set expandtab
+set winheight=10
+set winminheight=10
+set winheight=100
+set laststatus=2
+
+if &term == "vt220"
+  set term=builtin_ansi
+endif
+
+if has("syntax")
+  set background=dark
+  syntax on		" Default to no syntax highlightning 
+endif
+
+filetype on
+filetype plugin on
+filetype indent on
+augroup C
+    "au FileType c set foldenable foldmethod=indent
+    au FileType c set foldenable foldmethod=syntax foldlevel=100
+    au FileType c syn region Block start="{" end="}" transparent fold
+    au FileType c syn region Comment start="/\*" end="\*/" fold
+augroup END
