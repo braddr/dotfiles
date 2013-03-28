@@ -42,13 +42,19 @@ case "${curdir}" in
         ;;
 esac
 
+if [ -r ~/.prompt-hostname ]; then
+    h=`cat ~/.prompt-hostname`
+else
+    h="\h"
+fi
+
 function build_prompt() {
     if [ "$1" = "yes" ]; then
         c1="\[\e[01;32m\]"
         c2="\[\e[01;36m\]"
         cr="\[\e[00m\]"
     fi
-    echo "${debian_chroot:+($debian_chroot)}${c1}\u@\h${cr}:${c2}${curdir}${cr}${gitprompt}"
+    echo "${debian_chroot:+($debian_chroot)}${c1}\u@${h}${cr}:${c2}${curdir}${cr}${gitprompt}"
 }
 
 if [ -t 0 -a ! -z "$color_prompt" ]; then

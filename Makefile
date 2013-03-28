@@ -17,7 +17,7 @@ diff:
 	$(QUIET)for x in $(patsubst src/%,%,$(INFILES)); do diff -u src/$$x $(OUTPUTDIR)/.$$x; done
 
 $(SSHKEYS):
-	scp -q braddr@redmond.puremagic.com:~/$@ ~/$@
+	scp -P 2225 -q braddr@comcast.puremagic.com:~/$@ ~/$@
 
 ssh-keys: $(SSHKEYS)
 
