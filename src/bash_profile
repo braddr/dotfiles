@@ -53,3 +53,7 @@ if [ -d ~/bin ]; then
     export PATH=$PATH:~/bin
 fi
 
+# macports uses /opt/local/...
+if [ -d /opt/local ]; then
+    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+fi
