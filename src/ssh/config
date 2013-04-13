@@ -2,10 +2,11 @@ Host github.com
         User git
         Hostname github.com
         PreferredAuthentications publickey
-        IdentityFile ~/.ssh/github.rsa
+        IdentityFile ~/.ssh/puremagic-github.rsa
 
 Host *.puremagic.com
-        IdentityFile ~/.ssh/id_rsa
+        User braddr
+        IdentityFile ~/.ssh/puremagic-id.rsa
 
 Host *.compute-1.amazonaws.com
         User ec2-user
