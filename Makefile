@@ -11,6 +11,12 @@ $(OUTPUTDIR)/.% : src/%
 	$(QUIET)mkdir -p $(dir $@)
 	$(QUIET)cp -a $< $@
 
+$(OUTPUTDIR)/.ssh/authorized_keys : src/ssh/authorized_keys
+	$(QUIET)echo "Copying $< -> $@"
+	$(QUIET)mkdir -p $(dir $@)
+	$(QUIET)cp -a $< $@
+	$(QUIET)chmod go-rwx $@
+
 copy-files: $(OUTFILES)
 
 diff:
