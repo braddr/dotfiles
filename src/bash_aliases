@@ -3,7 +3,7 @@ if [ "x$uname_s" == "xDarwin" ]; then
     export CLICOLORS=1
     export LSCOLORS="Exfxcxdxbxegedabagacad"
 elif [ "x$uname_s" == "xFreeBSD" ]; then
-    export nocolors=1
+    alias vi='vim'
 else
     if [ -x /usr/bin/dircolors ]; then
         test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
