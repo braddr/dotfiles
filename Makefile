@@ -17,6 +17,12 @@ $(OUTPUTDIR)/.ssh/authorized_keys : src/ssh/authorized_keys
 	$(QUIET)cp -a $< $@
 	$(QUIET)chmod go-rwx $@
 
+$(OUTPUTDIR)/.ssh/config : src/ssh/config
+	$(QUIET)echo "Copying $< -> $@"
+	$(QUIET)mkdir -p $(dir $@)
+	$(QUIET)cp -a $< $@
+	$(QUIET)chmod go-rwx $@
+
 copy-files: $(OUTFILES)
 
 diff:
