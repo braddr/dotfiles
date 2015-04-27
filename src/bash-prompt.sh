@@ -48,6 +48,10 @@ else
     h="\h"
 fi
 
+if [ ! -z "$HOSTTYPE" ]; then
+    h="$h ($HOSTTYPE)"
+fi
+
 function build_prompt() {
     if [ "$1" = "yes" ]; then
         c1="\[\e[01;32m\]"
