@@ -14,7 +14,7 @@ $(OUTPUTDIR)/.% : src/%
 $(OUTPUTDIR)/.ssh/authorized_keys : src/ssh/authorized_keys
 	$(QUIET)echo "Copying $< -> $@"
 	$(QUIET)mkdir -p $(dir $@)
-	$(QUIET)cp -a $< $@
+	$(QUIET)cat $< >> $@
 	$(QUIET)chmod go-rwx $@
 
 $(OUTPUTDIR)/.ssh/config : src/ssh/config
