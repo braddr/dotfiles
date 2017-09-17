@@ -45,7 +45,7 @@ esac
 if [ -r ~/.prompt-hostname ]; then
     h=`cat ~/.prompt-hostname`
 else
-    h="\h"
+    h="\H"
 fi
 
 if [ ! -z "$HOSTTYPE" ]; then
