@@ -42,6 +42,11 @@ case "${curdir}" in
         ;;
 esac
 
+gittop=`git rev-parse --show-toplevel 2> /dev/null`
+if [ $? -eq 0 -a ! -z "$gittop" ]; then
+    curdir=$(basename $gittop)${curdir:${#gittop}}
+fi
+
 if [ -r ~/.prompt-hostname ]; then
     h=`cat ~/.prompt-hostname`
 else
